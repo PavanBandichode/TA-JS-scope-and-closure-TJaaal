@@ -89,3 +89,4 @@ hello.user = "Sam"; // invalid
 9. What is higher order function explain with an example.
    //A “higher-order function” is a function that accepts functions as parameters and/or returns a function.
 10. Explain what is callback function. Why you can pass a function inside a function?
+    //cb function is used as a parameret to a different finction where the defination of its ids utilized to get yhe result
