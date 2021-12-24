@@ -12,9 +12,9 @@ function change() {
   console.log(species);
 }
 
-console.log(species); // 1
+console.log(species); // human
 change();
-console.log(species); // 2
+console.log(species); // human
 ```
 
 czc
@@ -70,12 +70,12 @@ function main() {
     console.log(two); // 2
     console.log(three); // 3
   }
-  console.log(four); // 4
+  console.log(four); // error
   inner();
 }
 
 main();
-console.log(one, two, three, four); // 5
+console.log(one, two, three, four); //four is not defined
 ```
 
 <!-- Put your image below -->
