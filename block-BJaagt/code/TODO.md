@@ -84,7 +84,9 @@ console.log(i, "Second"); // 10 "Second"
 
 ```js
 for (let i = 0; i < 10; i++) {
-  console.log(i, "First"); //  prints i from 0 to 9 and then first for 10 times
+  console.log(i, "First"); //  prints i from 0 to 9(i.e 10 times)and then first for 10 times
 }
 console.log(i, "Second"); //10 "Second"
 ```
+
+..
