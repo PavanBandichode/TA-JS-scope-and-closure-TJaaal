@@ -12,7 +12,7 @@ function square(num) {
   return num * num;
 }
 let hundred = square(10);
-console.log(hundred);
+console.log(hundred); //100
 ```
 
 Create the execution context diagram of the following code line by line.
@@ -24,7 +24,7 @@ function addFive(n) {
 }
 var five = addFive(0);
 var ten = addFive(5);
-console.log(five, ten);
+console.log(five, ten); //5,10
 ```
 
 Create the execution context diagram of the following code line by line.
@@ -39,7 +39,7 @@ function multiplyArrayByN(arr, n) {
   return finalArr;
 }
 
-let numbers = multiplyArrayByN(marks);
+let numbers = multiplyArrayByN(marks); //undefined
 ```
 
 Create the execution context diagram of the following code line by line.
@@ -53,6 +53,7 @@ function counter(){
   }
   return increment()
 }
+// Unexpected identifier
 ```
 
 Create the execution context diagram of the following code line by line.
@@ -66,4 +67,5 @@ let counter = function () {
   }
   return increment();
 };
+// Unexpected identifier
 ```
