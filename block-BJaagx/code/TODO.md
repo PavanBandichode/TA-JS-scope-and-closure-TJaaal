@@ -1,9 +1,9 @@
-
 1. Which all function is Higher order function and which one is a callback function in the code given below.
 
 ```js
 let marks = [34, 45, 56, 76];
 function multiplyArrayByN(arr, cb) {
+  //HOF
   let finalArr = [];
   for (let elm of arr) {
     finalArr.push(cb(elm));
@@ -13,9 +13,11 @@ function multiplyArrayByN(arr, cb) {
 function addFive(n) {
   return n + 5;
 }
+//cb fn
 function multiplyBy5(n) {
   return n * 5;
 }
+//cb fn
 let numbersAddedFive = multiplyArrayByN(marks, addFive);
 let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5);
 ```
@@ -26,8 +28,12 @@ let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5);
 
 ```js
 function operation(n, opFn) {
-  // your code goes her
+  opFn(n);
 }
+function opFn(n) {
+  return n / 10;
+}
+operation(21, opFn);
 // TEST
 console.log(
   operation(21, function (n) {
