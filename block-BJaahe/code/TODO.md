@@ -67,6 +67,7 @@ storyOfMyLife.erase(); // ''
 When `forEach` function is called it returns another function. When the returned function is called it returns the element from the array at specific index. Every time you call the returned function the value of index should increment.
 
 ```js
+zcsc;
 function forEach() {}
 
 let next = [1, 2, 3, 4, 5];
