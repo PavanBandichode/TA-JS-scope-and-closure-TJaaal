@@ -13,8 +13,9 @@ function outer(string) {
 
 ```js
 function delay(cb, wait) {
-  let sayHello = alert(`${string}`);
-  sayHello();
+  return function () {
+    setTimeout(cb, wait);
+  };
 }
 ```
 
@@ -23,7 +24,7 @@ function delay(cb, wait) {
 ```js
 function lastName(lName) {
   return function inner(fname) {
-    console.log(`${fname} ${lName[]}`);
+    console.log(`${fname} ${lName}`);
   };
 }
 
@@ -67,10 +68,14 @@ storyOfMyLife.erase(); // ''
 When `forEach` function is called it returns another function. When the returned function is called it returns the element from the array at specific index. Every time you call the returned function the value of index should increment.
 
 ```js
-zcsc;
-function forEach() {}
+function forEach(array) {
+  let index = 0;
+  return function () {
+    return array[index++];
+  };
+}
 
-let next = [1, 2, 3, 4, 5];
+let next = forEach([1, 2, 3, 4, 5]);
 next(); // 1
 next(); // 2
 next(); // 3
@@ -84,7 +89,9 @@ The returned function accepts a string `prefix` and returns `prefix` and `title`
 
 ```js
 function addDesignation(title) {
-  // your code goes here
+  return function (prefix) {
+    return `${prefix} ${title}`;
+  };
 }
 
 let sales = addDesignation("Salesman");
@@ -102,8 +109,18 @@ manager("Head"); // Head Manager
 - `current` will return the current salary returns the updated salary
 
 ```js
-function changeSalary() {
-  // Your code goes here
+function changeSalary(currentSalary) {
+  return {
+    raise: function () {
+      return currentSalary + 500;
+    },
+    lower: function () {
+      return currentSalary - 500;
+    },
+    current: function () {
+      return currentSalary;
+    },
+  };
 }
 
 let sam = changeSalary(2000);
@@ -120,7 +137,19 @@ arya.lower(); // 3500
 - `setLastName`: accepts a parameter last name using which updates the firstName and return the updated full name
 
 ```js
-// Your code goes here
+function nameFactory(firstName, lastName) {
+  return {
+    getFullName: function () {
+      return `${firstName} ${lastName}`;
+    },
+    setFirstName: function (firstName) {
+      return `${firstName} ${lastName}`;
+    },
+    setLastName: function (lastName) {
+      return `${firstName} ${lastName}`;
+    },
+  };
+}
 
 let arya = nameFactory("Arya", "Stark");
 arya.getFullName(); // "Arya Stark"
